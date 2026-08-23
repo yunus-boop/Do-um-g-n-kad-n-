@@ -1,112 +1,114 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Sana Bir Sürprizim Var ❤️</title>
-<style>
-body {
-background-color: #111;        body {
-background-image: url('index.jpg');
-background-size: cover;
-background-position: center;
-background-repeat: no-repeat;
-background-color: rgba(0, 0, 0, 0.5);
-background-blend-mode: darken;
-height: 100vh;
-margin: 0;
-display: flex;
-justify-content: center;
-align-items: center;
-overflow: hidden
-font-family: Arial, sans-serif  }
-/* Zarfın Kutusu */
-.envelope-box {
-background: #ff4d6d;
-padding: 30px;
-border-radius: 15px;
-text-align: center;
-color: white;
-box-shadow: 0 10px 25px rgba(0,0,0,0.3);
-z-index: 10;
-cursor: pointer;
-transition: transform 0.3s;
-}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sana Bir Sürprizim Var ❤️</title>
+    <style>
+        body {
+            /* Galerinden yüklediğin fotoğrafın adı index.jpg olduğu için buraya direkt bağlıyoruz */
+            background-image: url('index.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-color: rgba(0, 0, 0, 0.6);
+            background-blend-mode: darken;
+            
+            height: 100vh;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            font-family: Arial, sans-serif;
+        }
 
-.envelope-box:hover {
-transform: scale(1.05);
-}
+        /* Zarfın Kutusu - Tam ortada durması için ayarlandı */
+        .envelope-box {
+            background: rgba(255, 77, 109, 0.9);
+            padding: 30px;
+            border-radius: 20px;
+            text-align: center;
+            color: white;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            z-index: 10;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
 
-/* Mesaj Alanı (Başta gizli olabilir veya direkt yazabilirsin) */
-#message {
-display: none;
-background: white;
-color: #333;
-padding: 20px;
-border-radius: 10px;
-position: absolute;
-width: 80%;
-max-width: 400px;
-text-align: center;
-z-index: 20;
-box-shadow: 0 5px 15px rgba(0,0,0,0.5);
-animation: fadeIn 1s ease;
-}
+        .envelope-box:hover {
+            transform: scale(1.05);
+        }
 
-@keyframes fadeIn {
-from { opacity: 0; transform: translateY(30px); }
-to { opacity: 1; transform: translateY(0); }
-}
-</style>
+        /* Mesaj Alanı */
+        #message {
+            display: none;
+            background: white;
+            color: #333;
+            padding: 25px;
+            border-radius: 15px;
+            position: absolute;
+            width: 80%;
+            max-width: 400px;
+            text-align: center;
+            z-index: 20;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+            animation: fadeIn 1s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
 </head>
 <body>
 
-<!-- Zarf Butonu -->
-<div class="envelope-box" onclick="acilsinNove()">
-<h2>💌 Sana Bir Mektup Var</h2>
-<p>Açmak için tıkla...</p>
-</div>
+    <!-- Zarf Butonu -->
+    <div class="envelope-box" onclick="acilsinNove()">
+        <h2>💌 Sana Bir Mektup Var</h2>
+        <p>Açmak için tıkla...</p>
+    </div>
 
-<!-- İçindeki Not (Hayatımın anlamı iyiki doğmuşsun seni tanıdığıma çok mutluyum hayatıma renk kattın bebeğim yavrum hayatımın anlamısın sen benim seni o kadar çok seviyorum ki aklın eremeyebilir iyiki tanımısım seni iyiki doğmuşsun hastayım kızım sana o kadar aşığım ki peşini bırakmıycam hiçbi zaman seni çok seviyorum mutlu nice benli senelere🤍) -->
-<div id="message">
-<h3>Sevgilim... ❤️</h3>
-<p>Hayatımın anlamı iyiki doğmuşsun seni tanıdığıma çok mutluyum hayatıma renk kattın bebeğim yavrum hayatımın anlamısın sen benim seni o kadar çok seviyorum ki aklın eremeyebilir iyiki tanımısım seni iyiki doğmuşsun hastayım kızım sana o kadar aşığım ki peşini bırakmıycam hiçbi zaman seni çok seviyorum mutlu nice benli senelere🤍! Seni çok seviyorum...</p>
-<button onclick="kapat()" style="margin-top:10px; padding:5px 15px; background:#ff4d6d; color:white; border:none; border-radius:5px;">Kapat</button>
-</div>
+    <!-- İçindeki Not (Buraya sevgiline yazacağın yazıyı yazabilirsin) -->
+    <div id="message">
+        <h3>Sevgilim... ❤️</h3>
+        <p>Hayatımın anlamı iyiki doğmuşsun seni tanıdığıma çok mutluyum hayatıma renk kattın bebeğim yavrum hayatımın anlamısın sen benim seni o kadar çok seviyorum ki aklın eremeyebilir iyiki tanımısım seni iyiki doğmuşsun hastayım kızım sana o kadar aşığım ki peşini bırakmıycam hiçbi zaman seni çok seviyorum sevgilim yavrum bebeğim karıcım aşkım benim nice mutlu nice benli senelere🤍</p>
+        <button onclick="kapat()" style="margin-top:15px; padding:8px 20px; background:#ff4d6d; color:white; border:none; border-radius:8px; cursor:pointer;">Kapat</button>
+    </div>
 
-<!-- Kalp Animasyonu Kodun -->
-<script>
-function createHeart(){
-const heart = document.createElement("div");
-heart.innerHTML = "❤️";
-heart.style.position = "fixed";
-heart.style.left = Math.random() * 100 + "vw";
-heart.style.top = "100vh";
-heart.style.fontSize = (20 + Math.random() * 30) + "px";
-heart.style.pointerEvents = "none";
-document.body.appendChild(heart);
+    <!-- Kalp Animasyonu -->
+    <script>
+        function createHeart(){
+            const heart = document.createElement("div");
+            heart.innerHTML = "❤️";
+            heart.style.position = "fixed";
+            heart.style.left = Math.random() * 100 + "vw";
+            heart.style.top = "100vh";
+            heart.style.fontSize = (20 + Math.random() * 30) + "px";
+            heart.style.pointerEvents = "none";
+            document.body.appendChild(heart);
 
-let pos = 100;
-const move = setInterval(() => {
-pos -= 1;
-heart.style.top = pos + "vh";
-if(pos < -10){
-clearInterval(move);
-heart.remove();
-}
-}, 30);
-}
+            let pos = 100;
+            const move = setInterval(() => {
+                pos -= 1;
+                heart.style.top = pos + "vh";
+                if(pos < -10){
+                    clearInterval(move);
+                    heart.remove();
+                }
+            }, 30);
+        }
 
-setInterval(createHeart, 500);
+        setInterval(createHeart, 500);
 
-// Zarfı açma fonksiyonu
-function acilsinNove() {
-document.getElementById('message').style.display = 'block';
-}
+        function acilsinNove() {
+            document.getElementById('message').style.display = 'block';
+        }
 
-function kapat() {
-document.getElementById('message').style.display = 'none';
-}
-</script>
+        function kapat() {
+            document.getElementById('message').style.display = 'none';
+        }
+    </script>
 </body>
 </html>
