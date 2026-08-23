@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sana Bir Sürprizim Var ❤️</title>
+<style>
+body {
+background-color: #111;
+height: 100vh;
+margin: 0;
+display: flex;
+justify-content: center;
+align-items: center;
+overflow: hidden;
+font-family: Arial, sans-serif;
+}
+
+/* Zarfın Kutusu */
+.envelope-box {
+background: #ff4d6d;
+padding: 30px;
+border-radius: 15px;
+text-align: center;
+color: white;
+box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+z-index: 10;
+cursor: pointer;
+transition: transform 0.3s;
+}
+
+.envelope-box:hover {
+transform: scale(1.05);
+}
+
+/* Mesaj Alanı (Başta gizli olabilir veya direkt yazabilirsin) */
+#message {
+display: none;
+background: white;
+color: #333;
+padding: 20px;
+border-radius: 10px;
+position: absolute;
+width: 80%;
+max-width: 400px;
+text-align: center;
+z-index: 20;
+box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+animation: fadeIn 1s ease;
+}
+
+@keyframes fadeIn {
+from { opacity: 0; transform: translateY(30px); }
+to { opacity: 1; transform: translateY(0); }
+}
+</style>
+</head>
+<body>
+
+<!-- Zarf Butonu -->
+<div class="envelope-box" onclick="acilsinNove()">
+<h2>💌 Sana Bir Mektup Var</h2>
+<p>Açmak için tıkla...</p>
+</div>
+
+<!-- İçindeki Not (Buraya sevgiline yazacağın yazıyı yazacaksın) -->
+<div id="message">
+<h3>Sevgilim... ❤️</h3>
+<p>Buraya ona söylemek istediğin en güzel sözleri yazabilirsin! Seni çok seviyorum...</p>
+<button onclick="kapat()" style="margin-top:10px; padding:5px 15px; background:#ff4d6d; color:white; border:none; border-radius:5px;">Kapat</button>
+</div>
+
+<!-- Kalp Animasyonu Kodun -->
+<script>
+function createHeart(){
+const heart = document.createElement("div");
+heart.innerHTML = "❤️";
+heart.style.position = "fixed";
+heart.style.left = Math.random() * 100 + "vw";
+heart.style.top = "100vh";
+heart.style.fontSize = (20 + Math.random() * 30) + "px";
+heart.style.pointerEvents = "none";
+document.body.appendChild(heart);
+
+let pos = 100;
+const move = setInterval(() => {
+pos -= 1;
+heart.style.top = pos + "vh";
+if(pos < -10){
+clearInterval(move);
+heart.remove();
+}
+}, 30);
+}
+
+setInterval(createHeart, 500);
+
+// Zarfı açma fonksiyonu
+function acilsinNove() {
+document.getElementById('message').style.display = 'block';
+}
+
+function kapat() {
+document.getElementById('message').style.display = 'none';
+}
+</script>
+</body>
+</html>
